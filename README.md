@@ -24,4 +24,4 @@ if (corto_load("filestore.json", 0, NULL)) {
 }
 ```
 
-If the file loaded successfully, all objects under `data` will now be persisted to JSON files.
+If the file loaded successfully, all objects under `data` will now be persisted to JSON files in the `/tmp/myProjectStore` directory.
