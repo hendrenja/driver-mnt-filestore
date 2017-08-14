@@ -1,0 +1,7 @@
+in package /driver/mnt/filestore
+
+class mount: core/mount:/
+    storedir: string
+    int16 construct()
+    void onNotify(core/subscriberEvent event) override
+    resultIter onQuery(core/query query) override
