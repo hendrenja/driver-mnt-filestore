@@ -12,7 +12,7 @@ filestore.json:
     "storedir": "/tmp/myProjectStore",
     "query": {
       "select": "//",
-      "from": "data",
+      "from": "data"
     },
     "policy.ownership": "LOCAL_OWNER"
   }
