@@ -7,7 +7,7 @@ The easiest way to add a filestore to your project is to add a configuration fil
 filestore.json:
 ```javascript
 {
-  "type": "driver/mnt/filestore",
+  "type": "driver/mnt/filestore/mount",
   "value": {
     "storedir": "/tmp/myProjectStore",
     "query": {
