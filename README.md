@@ -4,7 +4,7 @@ Store and retrieve objects in/from JSON files
 # Usage
 The easiest way to add a filestore to your project is to add a configuration file to your project and then load this file with `corto_load` in your application. Here's an example:
 
-`filestore.json`
+filestore.json:
 ```javascript
 {
   "type": "driver/mnt/filestore",
