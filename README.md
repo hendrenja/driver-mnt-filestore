@@ -1,8 +1,8 @@
 # filestore
 Store and retrieve objects in/from JSON files
 
-# Usage
-The easiest way to add a filestore to your project is to add a configuration file to your project and then load this file with `corto_load` in your application. Here's an example:
+## Usage
+The easiest way to add a filestore to your project is to add a configuration file to your project and then load this file with `corto_load` in your application. Here's an example that recursively persists all objects under `/data`, and stores the files in `/tmp/myProjectStore`:
 
 filestore.json:
 ```javascript
@@ -13,17 +13,16 @@ filestore.json:
     "query": {
       "select": "//",
       "from": "data",
-      "ownership": "LOCAL_OWNER"
-    }
+    },
+    "policy.ownership": "LOCAL_OWNER"
   }
 }
 ```
+By setting `policy.ownership` to `LOCAL_OWNER`, objects in the store will be owned by the application. This ensures that when you restart the application, initial values from persisted objects are overwritten with the latest value from the store.
 
-You can then load this file in your application, by doing:
+You can load this file in your application, by doing:
 ```c
 if (corto_load("filestore.json", 0, NULL)) {
     corto_error("%s", corto_lasterr());
 }
 ```
-
-If the file loaded successfully, all objects under `data` will now be persisted to JSON files in the `/tmp/myProjectStore` directory.
