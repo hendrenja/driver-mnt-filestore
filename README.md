@@ -11,7 +11,9 @@ filestore.json:
   "value": {
     "storedir": "/tmp/myProjectStore",
     "query": {
-      "from": "data"
+      "select": "//",
+      "from": "data",
+      "ownership": "LOCAL_OWNER"
     }
   }
 }
