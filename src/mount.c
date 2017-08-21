@@ -51,7 +51,7 @@ corto_resultIter filestore_mount_onQuery(
             if (ext && !strcmp(ext, ".json")) {
                 /* Strip extension for matching */
                 ext[0] = '\0';
-                if (corto_match(query->select, file)) {
+                if (corto_idmatch(query->select, file)) {
                     /* Test if there is a directory with same name, in which case
                      * this file is not a leaf */
                     bool isDir = corto_isdir(file);
