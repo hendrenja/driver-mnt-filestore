@@ -1,7 +1,7 @@
 in package /driver/mnt/filestore
 
-class mount: core/mount:/
+class mount: vstore/mount:/
     storedir: string
     int16 construct()
-    void onNotify(core/subscriberEvent event) override
-    resultIter onQuery(core/query query) override
+    void onNotify(vstore/subscriberEvent event) override
+    resultIter onQuery(vstore/query query) override
