@@ -16,7 +16,7 @@ void filestore_mount_onNotify(
     char *dir, *file;
     corto_asprintf(&dir, "%s/%s", this->storedir, event->data.parent);
     corto_asprintf(&file, "%s/%s.json", dir, event->data.id);
-    if (event->event == CORTO_ON_DELETE) {
+    if (event->event == CORTO_DELETE) {
         if (corto_rm(file)) corto_error("failed to delete file '%s'", file);            
     } else {
         if (corto_mkdir(dir)) {
