@@ -13,9 +13,8 @@ void filestore_mount_onNotify(
     filestore_mount this,
     corto_subscriberEvent *event)
 {
-    char *dir, *file;
-    corto_asprintf(&dir, "%s/%s", this->storedir, event->data.parent);
-    corto_asprintf(&file, "%s/%s.json", dir, event->data.id);
+    char *dir = corto_asprintf("%s/%s", this->storedir, event->data.parent);
+    char *file = corto_asprintf("%s/%s.json", dir, event->data.id);
     if (event->event == CORTO_DELETE) {
         if (corto_rm(file)) corto_error("failed to delete file '%s'", file);            
     } else {
@@ -39,8 +38,7 @@ corto_resultIter filestore_mount_onQuery(
     filestore_mount this,
     corto_query *query)
 {
-    char *dir;
-    corto_asprintf(&dir, "%s/%s", this->storedir, query->from);
+    char *dir = corto_asprintf("%s/%s", this->storedir, query->from);
     corto_ll files = corto_opendir(dir);
     if (files) {
         char *prevCwd = strdup(corto_cwd());
