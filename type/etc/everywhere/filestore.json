@@ -1,0 +1,14 @@
+{
+    "type": "driver/mnt/filestore/mount",
+    "value": {
+        "storedir": "/home/hendren/dev/corto/driver-mnt-filestore/type/etc/everywhere/filestore",
+        "query": {
+            "select": "//",
+            "from": "data/weather"
+        },
+        "policy": {
+            "ownership": "LOCAL_OWNER",
+            "mask": "MOUNT_QUERY|MOUNT_NOTIFY"
+        }
+    }
+}
