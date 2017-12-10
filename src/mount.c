@@ -54,7 +54,7 @@ corto_resultIter filestore_mount_onQuery(
                      * this file is not a leaf */
                     bool isDir = corto_isdir(file);
                     ext[0] = '.'; /* Restore extension */
-                    char *json = corto_fileLoad(file);
+                    char *json = corto_file_load(file);
                     if (json) {
                         corto_result *r = corto_ptr_new(corto_result_o);
                         if (corto_result_fromcontent(r, "text/json", json)) {
